@@ -1,0 +1,10 @@
+-- 코드를 작성해주세요
+-- 부서별 평균 연봉조회
+
+SELECT      DPT.DEPT_ID,
+            DPT.DEPT_NAME_EN,
+            ROUND(AVG(EMP.SAL),0) AS AVG_SAL
+FROM        HR_EMPLOYEES AS EMP INNER JOIN HR_DEPARTMENT AS DPT
+ON          EMP.DEPT_ID = DPT.DEPT_ID
+GROUP BY    DEPT_ID
+ORDER BY    AVG_SAL DESC
