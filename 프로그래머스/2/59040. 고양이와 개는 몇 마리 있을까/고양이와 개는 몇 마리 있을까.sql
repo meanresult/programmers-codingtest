@@ -1,0 +1,8 @@
+-- 고양이와 개가 각각 몇 마리인지 조회하는 SQL문을 작성
+-- ORDER BY ANIMAL TYPE
+SELECT      ANIMAL_TYPE
+            ,COUNT(ANIMAL_TYPE)
+
+FROM        ANIMAL_INS
+GROUP BY    ANIMAL_TYPE
+ORDER BY    ANIMAL_TYPE
