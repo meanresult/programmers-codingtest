@@ -15,7 +15,7 @@ WITH G AS (
                             COUNT(car_id) AS CNT 
 
             FROM            CAR_RENTAL_COMPANY_RENTAL_HISTORY
-            WHERE           START_DATE BETWEEN "2022-08-01" AND "2022-10-30"
+            WHERE           START_DATE BETWEEN "2022-08-01" AND "2022-10-31"
             GROUP BY        car_id
             HAVING          CNT >= 5
             )
