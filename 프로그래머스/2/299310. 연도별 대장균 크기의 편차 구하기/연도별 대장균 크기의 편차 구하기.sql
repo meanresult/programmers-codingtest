@@ -30,3 +30,15 @@ LEFT JOIN   MAXS M
 ON          Y.YEAR = M.YEAR
 
 ORDER BY    Y.YEAR, YEAR_DEV
+
+-- --------------------
+-- 개선사항
+-- over (partition by ) 사용 - group by에서 값을 찾을 때는 사용하면 좋음  
+-- 행을 그대로 유지하면서 그룹화를 하고 싶을 때 
+''' select       year(DIFFERENTIATION_DATE) as year,
+                max(SIZE_OF_COLONY) over (partition by year) - SIZE_OF_COLONY as YEAR_DEV,
+                ID
+    
+    FROM        ECOLI_DATA
+    
+    ORDER BY    1, 2'''
